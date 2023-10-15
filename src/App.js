@@ -1,4 +1,4 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
+import { ConnectWallet, darkTheme } from "@thirdweb-dev/react";
 import "./styles/Home.css";
 
 export default function Home() {
@@ -7,31 +7,55 @@ export default function Home() {
       <div className="container">
         <div className="header">
           <h1 className="title">
-            Welcome to{" "}
+            
             <span className="gradient-text-0">
               <a
                 href="https://thirdweb.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                thirdweb.
+                CodeX DAO Smart Contract Games.
               </a>
             </span>
           </h1>
 
           <p className="description">
-            Get started by configuring your desired network in{" "}
+            Get started by connecting your wallet{" "}
             <code className="code">src/index.js</code>, then modify the{" "}
             <code className="code">src/App.js</code> file!
           </p>
 
           <div className="connect">
-            <ConnectWallet
-              dropdownPosition={{
-                side: "bottom",
-                align: "center",
-              }}
-            />
+          <ConnectWallet
+        theme={darkTheme({
+          colors: {
+            accentText: "#36beff",
+            accentButtonBg: "#36beff",
+            modalBg: "#131418",
+            dropdownBg: "#131418",
+            primaryText: "#36beff",
+            separatorLine: "#36beff",
+          },
+        })}
+        btnTitle={"Connect Wallet"}
+        modalTitle={" Connect Your Wallet"}
+        switchToActiveChain={true}
+        modalSize={"wide"}
+        welcomeScreen={{
+          img: {
+            src: "https://codex-dao.vercel.app/codexDAO-logo(1).png",
+            width: 150,
+            height: 150,
+          },
+          subtitle:
+            "Connect your wallet using any options on the left",
+          title:
+            "Your portal to the Blockchain World",
+        }}
+        modalTitleIconUrl={
+          "https://codex-dao.vercel.app/codexDAO-logo(1).png"
+        }
+      />
           </div>
         </div>
 
